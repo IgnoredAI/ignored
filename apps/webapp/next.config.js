@@ -11,22 +11,22 @@ module.exports = withBundleAnalyzer({
   },
   compress: true,
   webpack(config, { isServer }) {
-    if (!isServer) {
-      config.cache = {
-        type: 'filesystem', 
-        buildDependencies: {
-          config: [__filename], 
-        },
-        compression: 'brotli', 
-        maxAge: 1000 * 60 * 60 * 24 * 7, 
-      };
+    config.cache = {
+      type: 'filesystem', 
+      buildDependencies: {
+        config: [__filename], 
+      },
+      compression: 'brotli', 
+      maxAge: 1000 * 60 * 60 * 24 * 7, 
+    };
 
+    if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
-        fs: false,
+        fs: false, 
       };
     }
+
     return config;
   },
 });
-
