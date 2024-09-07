@@ -3,6 +3,8 @@ import { SessionProvider } from "next-auth/react";
 import "../styles/globals.css"; 
 import Head from "next/head";
 
+export const runtime = "edge";
+
 export const metadata = {
   title: 'Ignored AI',
   description: 'Smart way to manage your tabs with Ignored AI',

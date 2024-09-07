@@ -4,6 +4,8 @@ import { TypewriterTextView } from "@/components/TypewriterTextView";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Header } from "./components/Header";
 
+export const runtime = "edge";
+
 export default function SignInPage() {
   return (
     <div className="min-h-screen flex flex-col bg-[rgb(16,16,16)]">

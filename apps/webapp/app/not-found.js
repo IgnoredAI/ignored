@@ -1,5 +1,7 @@
 import { Header } from "./signin/components/Header";
 
+export const runtime = "edge";
+
 export default function Page404() {
   return (
     <div className="min-h-screen flex flex-col bg-[rgb(16,16,16)]">

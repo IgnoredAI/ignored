@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/componen
 import { Button } from "@/components/ui/button";
 import { Table, TableHead, TableRow, TableCell, TableBody } from "@/components/ui/table";
 
+export const runtime = "edge";
+
 export default function HomePage() {
   const { data: session, status } = useSession();
 

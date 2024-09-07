@@ -2,6 +2,7 @@ import React from "react";
 import Markdown from "react-markdown";
 import { Header } from "../signin/components/Header";
 
+export const runtime = "edge";
 
 export default function PrivacyPolicyPage() {
 
