@@ -1,7 +1,22 @@
-// next.config.js
-module.exports = {
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+module.exports = withBundleAnalyzer({
   reactStrictMode: true,
+  swcMinify: true, 
   experimental: {
-    appDir: true, // Ensure this is enabled if you're using Next.js 13+ with the app directory
+    appDir: true,   
+    scrollRestoration: true, 
   },
-};
+  compress: true,   
+  webpack(config, { isServer }) {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback, 
+        fs: false, 
+      };
+    }
+    return config;
+  },
+});
