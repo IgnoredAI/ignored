@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Ignored AI",
+    "version": "1.0.0",
+    "description": "Manage and control your infinite browser tabs with a single click",
+    "permissions": ["tabs", "storage", "tabGroups", "activeTab", "webRequest", "webRequestBlocking"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+      "service_worker": "scripts/background.js"
+    },
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": {
+        "16": "assets/icon16.png",
+        "48": "assets/icon48.png",
+        "128": "assets/icon128.png"
+      }
+    },
+    "icons": {
+      "16": "assets/icon16.png",
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["src/contentScript.js"]
+      }
+    ]
+  }
+  

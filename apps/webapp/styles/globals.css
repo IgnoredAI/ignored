@@ -1,0 +1,24 @@
+/* /styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'PPFragment';
+    src: url('/assets/PPFragment.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+  
+  html, body {
+    font-family: 'Inter', sans-serif;
+    background-color: rgb(16, 16, 16);
+    color: white;
+  }
+  
+  .font-ppfragment {
+    font-family: 'PPFragment', sans-serif;
+  }
+  
