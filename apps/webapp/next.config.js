@@ -7,7 +7,6 @@ module.exports = withBundleAnalyzer({
   swcMinify: true,
   experimental: {
     appDir: true,
-    scrollRestoration: true,
   },
   compress: true,
   webpack(config, { isServer }) {

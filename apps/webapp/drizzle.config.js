@@ -1,7 +1,13 @@
-// drizzle.config.js
-import { drizzle } from "drizzle-orm";
-import { D1Database } from "@cloudflare/d1";
+export default {
+    schema: "../../packages/db/schema.js",
+    dialect: "sqlite",
+    driver: "d1-http",
+    dbCredentials: {
+      wranglerConfigPath: "./wrangler.toml",
+      dbName: "",
+    },
+    out: "migrations",
+  };
 
-// const db = drizzle(new D1Database(process.env.DATABASE_URL));
 
-export default db;
+  

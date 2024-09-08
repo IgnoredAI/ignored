@@ -7,7 +7,7 @@
         "@/*": ["./*"]
       }
     },
-    "include": ["**/*.js", "**/*.jsx", "next-env.d.ts"],
+    "include": ["**/*.js", "**/*.jsx", "next-env.d.ts", "drizzle.config.js"],
     "exclude": ["node_modules"]
   }
   

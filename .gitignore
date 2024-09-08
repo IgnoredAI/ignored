@@ -7,6 +7,7 @@ node_modules/
 .next/
 .vercel/
 .turbo/
+.wrangler/
 out/
 
 # Logs
@@ -36,6 +37,7 @@ build/
 .env.development.local
 .env.test.local
 .env.production.local
+.dev.vars
 
 # Miscellaneous
 .DS_Store
