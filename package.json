@@ -1,0 +1,22 @@
+{
+  "name": "ignored-ai",
+	"private": true,
+	"type": "module",
+  "packageManager": "npm@9.0.0",
+	"scripts": {
+		"build": "turbo build",
+		"dev": "turbo dev",
+		"lint": "turbo lint",
+		"format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+		"deploy": "turbo deploy"
+	},
+  "devDependencies": {
+    "drizzle-kit": "^0.24.2",
+    "turbo": "^2.1.1"
+  },
+  "dependencies": {
+    "@auth/drizzle-adapter": "^1.4.2",
+    "drizzle-orm": "^0.33.0",
+    "eslint-config-turbo": "^2.1.1"
+  }
+}

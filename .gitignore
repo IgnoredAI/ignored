@@ -6,6 +6,7 @@ node_modules/
 # Next.js build output
 .next/
 .vercel/
+.turbo/
 out/
 
 # Logs

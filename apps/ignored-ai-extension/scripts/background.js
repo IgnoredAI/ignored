@@ -1,4 +1,4 @@
-import { sendDataToBackend } from './utils';
+// import { sendDataToBackend } from './utils';
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.tabs.create({ url: 'http://localhost:3000/signin?extension=true' });
@@ -49,6 +49,6 @@ function collectAndSendData() {
       tabGroups: window.tabGroups || []
     }));
 
-    sendDataToBackend(data);
+    // sendDataToBackend(data);
   });
 }
