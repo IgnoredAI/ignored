@@ -1,16 +1,16 @@
 {
   "name": "ignored-ai",
-	"private": true,
-	"type": "module",
-  "packageManager": "npm@9.0.0",
-	"scripts": {
-		"build": "turbo build",
-		"dev": "turbo dev",
-		"lint": "turbo lint",
-		"format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-		"deploy": "turbo deploy"
-	},
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "deploy": "turbo deploy"
+  },
   "devDependencies": {
+    "@repo/db": "*",
     "drizzle-kit": "^0.24.2",
     "turbo": "^2.1.1"
   },
@@ -18,5 +18,13 @@
     "@auth/drizzle-adapter": "^1.4.2",
     "drizzle-orm": "^0.33.0",
     "eslint-config-turbo": "^2.1.1"
-  }
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@10.8.1",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }

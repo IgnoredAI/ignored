@@ -9,9 +9,7 @@
       "lint": {
         "dependsOn": ["^lint"]
       },
-      "deploy": {
-        "outputs": []
-      },
+      "deploy": {},
       "dev": {
         "env": [
           "NODE_ENV=development",

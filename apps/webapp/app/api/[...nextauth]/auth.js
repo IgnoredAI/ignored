@@ -2,7 +2,7 @@
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
-// import { db } from "../../../db";  // Update this path based on your db setup
+import { db } from "../../backend/db";  
 // import { accounts, sessions, users, verificationTokens } from "../../../db/schema";  // Adjust paths as needed
 
 export const {
@@ -13,7 +13,7 @@ export const {
 } = NextAuth({
   secret: process.env.BACKEND_SECURITY_KEY,
   trustHost: true,
-  // adapter: DrizzleAdapter(db),
+  adapter: DrizzleAdapter(db),
   providers: [
     Google({
       clientId: process.env.GOOGLE_CLIENT_ID,
