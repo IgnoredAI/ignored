@@ -4,6 +4,17 @@ chrome.runtime.onInstalled.addListener(() => {
   chrome.tabs.create({ url: 'http://localhost:3000/signin?extension=true' });
 });
 
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  console.log("addListener called");
+  if (message.accessToken) {
+    console.log("Received Access Token:", message.accessToken);
+
+    chrome.storage.local.set({ accessToken: message.accessToken }, () => {
+      console.log("Access token stored.");
+    });
+  }
+});
+
 const PERIODIC_INTERVAL = 5 * 60 * 1000; // 5 minutes
 
 chrome.runtime.onInstalled.addListener(() => {

@@ -3,7 +3,7 @@
     "name": "Ignored AI",
     "version": "1.0.0",
     "description": "Manage and control your infinite browser tabs with a single click",
-    "permissions": ["tabs", "storage", "tabGroups", "activeTab", "webRequest", "webRequestBlocking"],
+    "permissions": ["tabs", "storage", "identity", "tabGroups", "activeTab", "webRequest", "webRequestBlocking", "scripting"],
     "host_permissions": ["<all_urls>"],
     "background": {
       "service_worker": "scripts/background.js"

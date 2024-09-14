@@ -1,14 +1,23 @@
 "use client";
 
+import React, { useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Table, TableHead, TableRow, TableCell, TableBody } from "@/components/ui/table";
+import { getSessionAuthToken } from "../api/[...nextauth]/utils";
 
 export const runtime = "edge";
 
 export default function HomePage() {
   const { data: session, status } = useSession();
+
+  useEffect(() => {
+    getSessionAuthToken().then((token) => {
+			if (typeof window === "undefined") return;
+			window.postMessage({ token: token.data }, "*");
+		});
+  })
 
   if (status === "loading") {
     return (
@@ -21,10 +30,10 @@ export default function HomePage() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-black-50">
       <Card className="max-w-4xl w-full p-8 shadow-lg">
+        {console.log(session)}
         <CardHeader>
           <CardTitle className="text-3xl font-bold text-center">Welcome, {session.user?.name}!</CardTitle>
         </CardHeader>
-        {console.log(session)}
         <CardContent className="mt-6">
           <p className="text-center text-lg text-gray-600 mb-4">
             Here's a summary of your recent activity and tab management options.
